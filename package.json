@@ -4,6 +4,9 @@
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"dev": "bun run --watch server/index.ts",
+		"format": "bunx @biomejs/biome format --write .",
+		"lint": "bunx @biomejs/biome lint --write .",
+		"check": "bunx @biomejs/biome check --write .",
 		"migrate": "drizzle-kit generate --config=./drizzle/drizzle.config.ts && bun run ./server/db/drizzle/migrate.ts"
 	},
 	"dependencies": {
@@ -12,6 +15,7 @@
 		"pg": "^8.12.0"
 	},
 	"devDependencies": {
+		"@biomejs/biome": "1.8.2",
 		"@types/pg": "^8.11.6",
 		"bun-types": "latest",
 		"drizzle-kit": "^0.22.7"
