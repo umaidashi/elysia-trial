@@ -1,15 +1,20 @@
 {
-  "name": "elysia-trial",
-  "version": "1.0.50",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bun run --watch src/index.ts"
-  },
-  "dependencies": {
-    "elysia": "latest"
-  },
-  "devDependencies": {
-    "bun-types": "latest"
-  },
-  "module": "src/index.js"
+	"name": "elysia-trial",
+	"version": "1.0.50",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"dev": "bun run --watch server/index.ts",
+		"migrate": "drizzle-kit generate --config=./drizzle/drizzle.config.ts && bun run ./server/db/drizzle/migrate.ts"
+	},
+	"dependencies": {
+		"drizzle-orm": "^0.31.2",
+		"elysia": "latest",
+		"pg": "^8.12.0"
+	},
+	"devDependencies": {
+		"@types/pg": "^8.11.6",
+		"bun-types": "latest",
+		"drizzle-kit": "^0.22.7"
+	},
+	"module": "server/index.js"
 }
