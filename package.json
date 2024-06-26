@@ -3,7 +3,7 @@
   "version": "1.0.50",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "bun run --hot server/index.ts",
+    "dev": "bun run --watch server/index.ts",
     "format": "bunx @biomejs/biome format --write .",
     "lint": "bunx @biomejs/biome lint --write .",
     "check": "bunx @biomejs/biome check --write .",
