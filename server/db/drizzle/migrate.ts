@@ -9,12 +9,12 @@ const pool = new Pool({
 const db = drizzle(pool);
 
 async function main() {
-	console.log("Starting migration...");
+	console.log("🤖[Migration] Start");
 	await migrate(db, {
 		migrationsFolder: "server/db/migrations",
 	});
 
-	console.log("Migration complete.");
+	console.log("🤖[Migration] End");
 	process.exit(0);
 }
 
