@@ -14,6 +14,26 @@ export default new Elysia({ name: "todo" }).group("/todos", (app) =>
 				200: t.Array(todoDTO),
 			},
 		})
+		.get(
+			"/:id",
+			async ({ params }) => {
+				const { id } = params;
+				const [res] = await todoServices.one(Number(id));
+				return res;
+			},
+			{
+				detail: {
+					description: "Get a todo by id",
+					tags: ["Todos"],
+				},
+				params: t.Object({
+					id: t.Number(),
+				}),
+				response: {
+					200: todoDTO,
+				},
+			},
+		)
 		.post(
 			"/",
 			async ({ body }) => {
