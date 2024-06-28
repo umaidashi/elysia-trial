@@ -67,6 +67,29 @@ export default new Elysia({ name: 'todo' }).group('/todos', app =>
         params: t.Object({
           id: t.Number(),
         }),
+        response: {
+          200: todoDTO,
+        },
+      },
+    )
+    .post(
+      '/:id/complete',
+      async ({ params }) => {
+        const { id } = params
+        const res = await todoServices.complete(Number(id))
+        return res
+      },
+      {
+        detail: {
+          description: 'Mark a todo as Complete',
+          tags: ['Todos'],
+        },
+        params: t.Object({
+          id: t.Number(),
+        }),
+        response: {
+          200: todoDTO,
+        },
       },
     ),
 )
