@@ -28,7 +28,7 @@ export default new Elysia({ name: 'todo' }).group('/todos', app =>
           tags: ['Todos'],
         },
         params: t.Object({
-          id: t.Number(),
+          id: t.Numeric(),
         }),
         response: {
           200: todoDTO,
@@ -66,7 +66,7 @@ export default new Elysia({ name: 'todo' }).group('/todos', app =>
           tags: ['Todos'],
         },
         params: t.Object({
-          id: t.Number(),
+          id: t.Numeric(),
         }),
         response: {
           200: todoDTO,
@@ -86,7 +86,7 @@ export default new Elysia({ name: 'todo' }).group('/todos', app =>
           tags: ['Todos'],
         },
         params: t.Object({
-          id: t.Number(),
+          id: t.Numeric(),
         }),
         response: {
           200: todoDTO,
