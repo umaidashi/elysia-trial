@@ -16,9 +16,9 @@ export const todoReqIdDTO = t.Object({
 	id: t.Numeric(),
 });
 
-export const todoSearchQueryDTO = t.Object({
-	// title: t.Optional(t.String()),
-	// status: t.Optional(t.String()),
-	title: t.String(),
-	status: t.String(),
-});
+export const todoSearchQueryDTO = t.Optional(
+	t.Object({
+		title: t.Optional(t.String()),
+		status: t.Optional(t.String()),
+	}),
+);

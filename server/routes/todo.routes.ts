@@ -40,33 +40,26 @@ export default new Elysia({ name: "todo", normalize: true }).group(
 					},
 				},
 			)
-			.get("/search", ({ query }) => query, {
-				detail: {
-					description: "Search for todos",
-					tags: ["Todos"],
+			.get(
+				"/search",
+				async ({ query }) => {
+					const res = await todoServices.search({
+						title: query.title,
+						status: query.status,
+					});
+					return res;
 				},
-				// query: todoSearchQueryDTO,
-			})
-			// .get(
-			// 	"/search",
-			// 	async ({ query }) => {
-			// 		const res = await todoServices.search({
-			// 			title: query.title,
-			// 			status: query.status,
-			// 		});
-			// 		return res;
-			// 	},
-			// 	{
-			// 		detail: {
-			// 			description: "Search for todos",
-			// 			tags: ["Todos"],
-			// 		},
-			// 		query: todoSearchQueryDTO,
-			// 		response: {
-			// 			200: t.Array(todoDTO),
-			// 		},
-			// 	},
-			// )
+				{
+					detail: {
+						description: "Search for todos",
+						tags: ["Todos"],
+					},
+					query: todoSearchQueryDTO,
+					response: {
+						200: t.Array(todoDTO),
+					},
+				},
+			)
 			.post(
 				"/",
 				async ({ body }) => {
