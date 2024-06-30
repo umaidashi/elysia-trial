@@ -8,7 +8,7 @@ async function main() {
     .values({
       title: 'Learn Drizzle',
       description: 'Learn how to use Drizzle ORM',
-      status: 'TODO',
+      status: 'PENDING',
     })
     .execute()
   console.log('🤖[Seed] End')
