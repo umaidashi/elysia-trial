@@ -1,11 +1,16 @@
 import swagger from '@elysiajs/swagger'
 import { Elysia } from 'elysia'
+import loggerPlugin from './plugins/logger'
 import routes from './routes'
 
 const app = new Elysia()
-  .use(swagger())
+  .use(
+    swagger({
+      path: '/',
+    }),
+  )
+  .use(loggerPlugin)
   .use(routes)
-  .get('/', () => 'Hello, Elysia!')
   .listen(3000)
 
 console.log(
