@@ -1,8 +1,23 @@
-import { createSignal } from 'solid-js'
+import { createResource, createSignal } from 'solid-js'
 import solidLogo from './assets/solid.svg'
+import { client } from './client'
+
+const getTodos = async () => {
+  const { data, error } = await client.todos.get()
+  if (error) {
+    throw error.value
+  }
+
+  return data
+}
 
 function App() {
   const [count, setCount] = createSignal(0)
+
+  const [todos] = createResource(getTodos)
+  const todosData = JSON.stringify(todos())
+
+  console.log('todos', todosData)
 
   return (
     <div class='container'>
