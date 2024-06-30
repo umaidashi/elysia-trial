@@ -8,8 +8,9 @@ export default {
     name: data.name,
     version: data.version,
     host: Bun.env.TEST_APP_HOST || Bun.env.APP_HOST || 'localhost',
-    port:
-      (isTestEnvironment ? Bun.env.TEST_APP_PORT : Bun.env.APP_PORT) || '8000',
+    server_port:
+      (isTestEnvironment ? Bun.env.TEST_SERVER_PORT : Bun.env.SERVER_PORT) ||
+      '8080',
   },
   db: {
     DATABASE_URL:

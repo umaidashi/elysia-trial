@@ -18,7 +18,7 @@ const app = new Elysia()
   )
   .use(loggerPlugin)
   .use(routes)
-  .listen(3000)
+  .listen(config.app.server_port)
 
 console.log(
   `🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`,
