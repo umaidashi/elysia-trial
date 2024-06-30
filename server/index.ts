@@ -1,10 +1,12 @@
 import config from '@/config'
 import loggerPlugin from '@/plugins/logger'
 import routes from '@/routes'
+import cors from '@elysiajs/cors'
 import swagger from '@elysiajs/swagger'
 import { Elysia } from 'elysia'
 
 const app = new Elysia()
+  .use(cors())
   .use(
     swagger({
       path: '/',
