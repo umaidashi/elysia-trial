@@ -1,8 +1,8 @@
+import config from '@/config'
+import loggerPlugin from '@/plugins/logger'
+import routes from '@/routes'
 import swagger from '@elysiajs/swagger'
 import { Elysia } from 'elysia'
-import config from './config'
-import loggerPlugin from './plugins/logger'
-import routes from './routes'
 
 const app = new Elysia()
   .use(
@@ -23,3 +23,5 @@ const app = new Elysia()
 console.log(
   `🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`,
 )
+
+export type App = typeof app

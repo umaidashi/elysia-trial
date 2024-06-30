@@ -1,5 +1,5 @@
-import { db } from '../../../db/drizzle'
-import { type NewTodo, todos } from '../../../db/drizzle/schema'
+import { db } from '@/db/drizzle'
+import { type NewTodo, todos } from '@/db/drizzle/schema'
 
 export default async function (todo: NewTodo) {
   const [res] = await db

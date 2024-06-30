@@ -1,5 +1,5 @@
-import { db } from '../../../db/drizzle'
-import { todos } from '../../../db/drizzle/schema'
+import { db } from '@/db/drizzle'
+import { todos } from '@/db/drizzle/schema'
 
 export default async function () {
   return await db
