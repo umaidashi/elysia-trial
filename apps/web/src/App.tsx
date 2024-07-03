@@ -1,23 +1,13 @@
 import { eden } from 'eden'
-import { createResource, createSignal } from 'solid-js'
+import { Match, Suspense, Switch, createResource, createSignal } from 'solid-js'
 import solidLogo from './assets/solid.svg'
 
-const getTodos = async () => {
-  const { data, error } = await eden.todos.index.get()
-  if (error) {
-    throw error.value
-  }
-
-  return data
-}
+const getTodos = async () => await eden.todos.index.get()
 
 function App() {
   const [count, setCount] = createSignal(0)
 
   const [todos] = createResource(getTodos)
-  const todosData = JSON.stringify(todos())
-
-  console.log('todos', todosData)
 
   return (
     <div class='container'>
@@ -40,6 +30,16 @@ function App() {
           count is {count()}
         </button>
       </div>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Switch>
+          <Match when={todos.error}>
+            <span>Error: {todos.state}</span>
+          </Match>
+          <Match when={todos()}>
+            <div>{JSON.stringify(todos()?.data)}</div>
+          </Match>
+        </Switch>
+      </Suspense>
     </div>
   )
 }
