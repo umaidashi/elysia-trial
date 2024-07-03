@@ -4,9 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "preview": "vite preview"
+    "dev": "bunx --bun vite",
+    "build": "tsc -b && bunx --bun vite build",
+    "preview": "bunx --bun vite preview"
   },
   "dependencies": {
     "server": "workspace:*",
@@ -15,7 +15,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.19",
-    "elysia": "^1.0.25",
+    "elysia": "1.0.27",
     "postcss": "^8.4.39",
     "tailwindcss": "^3.4.4",
     "typescript": "^5.2.2",

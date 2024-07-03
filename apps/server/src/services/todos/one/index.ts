@@ -1,6 +1,6 @@
-import { db } from '@/db/drizzle'
-import { todos } from '@/db/drizzle/schema'
 import { eq } from 'drizzle-orm'
+import { db } from '../../../db/drizzle'
+import { todos } from '../../../db/drizzle/schema'
 
 export default async function (id: number) {
   const [res] = await db

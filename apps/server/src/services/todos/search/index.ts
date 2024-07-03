@@ -1,6 +1,6 @@
-import { db } from '@/db/drizzle'
-import { todos } from '@/db/drizzle/schema'
 import { and, desc, like } from 'drizzle-orm'
+import { db } from '../../../db/drizzle'
+import { todos } from '../../../db/drizzle/schema'
 
 type TodoSearchQueryConditions = {
   title?: string

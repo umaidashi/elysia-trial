@@ -1,13 +1,13 @@
-import type { NewTodo } from '@/db/drizzle/schema'
+import { Elysia, t } from 'elysia'
+import type { NewTodo } from '../db/drizzle/schema'
 import {
   todoCreateDTO,
   todoDTO,
   todoReqIdDTO,
   todoSearchQueryDTO,
-} from '@/dto/todo.dto'
-import { TODO_STATUS } from '@/model/todo.model'
-import { todoServices } from '@/services/todos'
-import { Elysia, t } from 'elysia'
+} from '../dto/todo.dto'
+import { TODO_STATUS } from '../model/todo.model'
+import { todoServices } from '../services/todos'
 
 export default new Elysia({ name: 'todo' }).group('/todos', app =>
   app

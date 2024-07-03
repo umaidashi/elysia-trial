@@ -1,6 +1,6 @@
-import config from '@/config'
-import { drizzle } from 'drizzle-orm/node-postgres'
+import { drizzle } from 'drizzle-orm/node-postgres/driver'
 import { Pool } from 'pg'
+import config from '../../config'
 
 const pool = new Pool({
   connectionString: config.db.DATABASE_URL,
