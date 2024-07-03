@@ -1,0 +1,29 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "src/index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "bun run --watch src/index.ts",
+    "format": "bunx @biomejs/biome format --write .",
+    "lint": "bunx @biomejs/biome lint --write .",
+    "check": "bunx @biomejs/biome check --write .",
+    "migrate": "drizzle-kit generate --config=./drizzle/drizzle.config.ts && bun run ./src/db/drizzle/migrate.ts",
+    "seed": "bun run ./src/db/drizzle/seed.ts",
+    "studio": "drizzle-kit studio --port 5432 --verbose --config=./drizzle/drizzle.config.ts"
+  },
+  "dependencies": {
+    "@elysiajs/cors": "^1.0.2",
+    "@elysiajs/swagger": "^1.0.5",
+    "drizzle-orm": "^0.31.2",
+    "elysia": "latest",
+    "pg": "^8.12.0",
+    "yoctocolors": "^2.1.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.8.2",
+    "@types/pg": "^8.11.6",
+    "bun-types": "latest",
+    "drizzle-kit": "^0.22.7"
+  }
+}

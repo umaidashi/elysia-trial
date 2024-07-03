@@ -4,7 +4,7 @@ import { db } from '.'
 async function main() {
   console.log('🤖[Migration] Start')
   await migrate(db, {
-    migrationsFolder: 'server/db/migrations',
+    migrationsFolder: 'src/db/migrations',
   })
 
   console.log('🤖[Migration] End')

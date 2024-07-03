@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "server": "workspace:*",
     "@elysiajs/eden": "^1.0.14",
     "solid-js": "^1.8.17"
   },
