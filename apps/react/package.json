@@ -10,10 +10,8 @@
     "preview": "bunx --bun vite preview"
   },
   "dependencies": {
-    "@elysiajs/eden": "^1.0.14",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "server": "workspace:*"
+    "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",
@@ -21,7 +19,6 @@
     "@typescript-eslint/eslint-plugin": "^7.13.1",
     "@typescript-eslint/parser": "^7.13.1",
     "@vitejs/plugin-react": "^4.3.1",
-    "elysia": "1.0.27",
     "eslint": "^8.57.0",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",

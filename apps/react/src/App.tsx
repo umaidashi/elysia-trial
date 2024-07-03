@@ -2,13 +2,13 @@ import { useEffect, useState } from 'react'
 import viteLogo from '/vite.svg'
 import reactLogo from './assets/react.svg'
 import './App.css'
-import { client } from 'server'
+import { eden } from 'eden'
 
 function App() {
   const [count, setCount] = useState(0)
 
   const fetch = async () => {
-    const { data } = await client.todos.index.get()
+    const { data } = await eden.todos.index.get()
     console.log(data)
   }
 

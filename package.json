@@ -9,5 +9,5 @@
     "dev": "turbo run dev",
     "clean": "rm -rf node_modules apps/*/node_modules bun.lockb apps/*/bun.lockb"
   },
-  "workspaces": ["apps/*"]
+  "workspaces": ["apps/*", "libs/*"]
 }

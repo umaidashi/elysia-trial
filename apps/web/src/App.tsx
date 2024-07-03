@@ -1,9 +1,9 @@
-import { client } from 'server'
+import { eden } from 'eden'
 import { createResource, createSignal } from 'solid-js'
 import solidLogo from './assets/solid.svg'
 
 const getTodos = async () => {
-  const { data, error } = await client.todos.index.get()
+  const { data, error } = await eden.todos.index.get()
   if (error) {
     throw error.value
   }

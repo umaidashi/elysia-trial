@@ -1,5 +1,4 @@
 import cors from '@elysiajs/cors'
-import { treaty } from '@elysiajs/eden'
 import swagger from '@elysiajs/swagger'
 import { Elysia } from 'elysia'
 import config from './config'
@@ -27,4 +26,4 @@ console.log(
   `🦊 Elysia is running at ${app.server?.hostname}:${app.server?.port}`,
 )
 
-export const client = treaty<typeof app>('http://localhost:8080')
+export type ElysiaApp = typeof app
